@@ -1,0 +1,21 @@
+{
+  "name": "xxe-static-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JS/TS XXE 静态分析器：仅用 TypeScript compiler API 做语法解析，AST/符号表/调用图/污点与配置追踪全部自建",
+  "type": "module",
+  "bin": {
+    "xxe-scan": "./src/cli.ts"
+  },
+  "scripts": {
+    "scan": "node src/cli.ts --root ..",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "typescript": "5.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0"
+  }
+}

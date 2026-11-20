@@ -4,3 +4,9 @@ __pycache__/
 .pytest_cache/
 findings.json
 findings.sarif
+
+# xxe analyzer
+analyzer/node_modules/
+.xxe-cache.json
+*.cache.json
+analyzer/perfroot.txt
