@@ -1,0 +1,578 @@
+{
+ "total": 50,
+ "rules": {
+  "XXE-DOM-001": {
+   "name": "xml-dom-parser",
+   "shortDescription": "DOM 解析器",
+   "help": "DOM 解析器收到外部 XML，且没有在解析前禁用 DTD/外部实体。"
+  },
+  "XXE-SAX-002": {
+   "name": "xml-sax-parser",
+   "shortDescription": "SAX 解析器",
+   "help": "SAX 解析器把外部 XML（或上传流）喂进 write()，解析器未关闭实体解析。"
+  },
+  "XXE-BIND-003": {
+   "name": "xml-binding",
+   "shortDescription": "XML 绑定反序列化",
+   "help": "xml2js/fast-xml-parser 绑定反序列化使用默认配置，DOCTYPE 与实体会被展开。"
+  },
+  "XXE-ENTITY-004": {
+   "name": "xml-entity-expansion",
+   "shortDescription": "自定义实体展开",
+   "help": "自定义 expandEntities 会按 SYSTEM 声明读文件，调用点未在展开前拒绝 DTD。"
+  }
+ },
+ "vulns": [
+  {
+   "id": "v01",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 4,
+   "entry": "uploadDom01",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v02",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 8,
+   "entry": "uploadDom02",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v03",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 12,
+   "entry": "uploadDom03",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v04",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 16,
+   "entry": "uploadDom04",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v05",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 20,
+   "entry": "uploadDom05",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v06",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 24,
+   "entry": "routeDom01",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v07",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 28,
+   "entry": "routeDom02",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v08",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 32,
+   "entry": "routeDom03",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v09",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 36,
+   "entry": "routeDom04",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v10",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 40,
+   "entry": "routeDom05",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v11",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 44,
+   "entry": "queueDom01",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v12",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 48,
+   "entry": "queueDom02",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v13",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 52,
+   "entry": "queueDom03",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v14",
+   "sink": "dom_parser",
+   "label": "DOM 解析器",
+   "file": "packages/parser-wrapper/src/dom.ts",
+   "line": 56,
+   "entry": "queueDom04",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v15",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 88,
+   "entry": "uploadSax06",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v16",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 97,
+   "entry": "uploadSax07",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v17",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 8,
+   "entry": "uploadSax08",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v18",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 16,
+   "entry": "uploadSax09",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v19",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 24,
+   "entry": "uploadSax10",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v20",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 32,
+   "entry": "uploadSax11",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v21",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 40,
+   "entry": "routeSax06",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v22",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 48,
+   "entry": "routeSax07",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v23",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 56,
+   "entry": "routeSax08",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v24",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 64,
+   "entry": "routeSax09",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v25",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 72,
+   "entry": "queueSax05",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v26",
+   "sink": "sax_parser",
+   "label": "SAX 解析器",
+   "file": "packages/parser-wrapper/src/sax.ts",
+   "line": 80,
+   "entry": "queueSax06",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v27",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 4,
+   "entry": "uploadBind12",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v28",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 8,
+   "entry": "uploadBind13",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v29",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 12,
+   "entry": "uploadBind14",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v30",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 16,
+   "entry": "uploadBind15",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v31",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 20,
+   "entry": "routeBind10",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v32",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 24,
+   "entry": "routeBind11",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v33",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 28,
+   "entry": "routeBind12",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v34",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 32,
+   "entry": "routeBind13",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v35",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 36,
+   "entry": "queueBind07",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v36",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 40,
+   "entry": "queueBind08",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v37",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 44,
+   "entry": "queueBind09",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v38",
+   "sink": "xml_binding",
+   "label": "XML 绑定反序列化",
+   "file": "packages/parser-wrapper/src/binding.ts",
+   "line": 48,
+   "entry": "queueBind10",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v39",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 13,
+   "entry": "uploadEnt16",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v40",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 17,
+   "entry": "uploadEnt17",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v41",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 21,
+   "entry": "uploadEnt18",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v42",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 25,
+   "entry": "uploadEnt19",
+   "entry_file": "packages/doc-service/src/upload.ts",
+   "source": "uploaded_file",
+   "severity": "high"
+  },
+  {
+   "id": "v43",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 29,
+   "entry": "routeEnt14",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v44",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 33,
+   "entry": "routeEnt15",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v45",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 37,
+   "entry": "routeEnt16",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v46",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 41,
+   "entry": "routeEnt17",
+   "entry_file": "packages/doc-service/src/routes.ts",
+   "source": "url_param",
+   "severity": "high"
+  },
+  {
+   "id": "v47",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 45,
+   "entry": "queueEnt11",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v48",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 49,
+   "entry": "queueEnt12",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v49",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 53,
+   "entry": "queueEnt13",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  },
+  {
+   "id": "v50",
+   "sink": "entity_expansion",
+   "label": "自定义实体展开",
+   "file": "packages/parser-wrapper/src/entities.ts",
+   "line": 57,
+   "entry": "queueEnt14",
+   "entry_file": "packages/doc-service/src/queue.ts",
+   "source": "message_body",
+   "severity": "high"
+  }
+ ],
+ "note": "packages/parser-wrapper/src/secure.ts 的 22 个函数先 assertNoDoctype 再调用同一个 sink，是 decoy；根因在 packages/common-config 的 defaultConfig 默认 allowDtd=true。"
+}

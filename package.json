@@ -1,0 +1,17 @@
+{
+  "name": "doc-convert-monorepo",
+  "version": "1.8.0",
+  "private": true,
+  "description": "文档转换服务：JS/TS XXE 静态分析语料（三包 monorepo）",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "scan": "python baseline/scan.py > findings.json",
+    "eval": "python eval.py findings.json",
+    "test": "python -m pytest tests -q"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

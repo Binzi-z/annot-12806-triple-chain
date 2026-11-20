@@ -1,0 +1,11 @@
+{
+  "name": "@doc/doc-service",
+  "version": "1.8.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@doc/common-config": "workspace:*",
+    "@doc/parser-wrapper": "workspace:*"
+  }
+}
